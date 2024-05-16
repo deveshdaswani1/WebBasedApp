@@ -107,7 +107,7 @@
                 <p>State: {{ order.state }}</p>
                 <p>Method: {{ order.method }}</p>
                 <p>Gift: {{ order.gift }}</p>
-                <button v-on:click="submitform" :disabled='isFormValid'>Place Order</button>
+                <button v-on:click="submitform" :disabled='!isFormValid'>Place Order</button>
             </div>
         </main>
     </div>
