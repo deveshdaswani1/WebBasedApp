@@ -1,8 +1,8 @@
 let products = [
     {
         "id": 1001,
-        "subject": "Soccer ball",
-        "location": "adidas",
+        "subject": "Soccer lessons",
+        "location": "Dubai",
         "size": "5",
         "price": 120,
         "image": "images/soccer.jpg",
@@ -14,8 +14,8 @@ let products = [
     },
     {
         "id": 1002,
-        "subject": "Boxing gloves",
-        "location": "Venum",
+        "subject": "Boxing lessons",
+        "location": "Abu Dhabi",
         "price": 140,
         "image": "images/boxing.jpg",
         "space": "4",
@@ -25,8 +25,8 @@ let products = [
     },
     {
         "id": 1003,
-        "subject": "Cricket bat",
-        "location": "Nike",
+        "subject": "Cricket lessons",
+        "location": "Sharjah",
         "price": 160,
         "image": "images/cricket.jpg",
         "space": "5",
@@ -35,8 +35,8 @@ let products = [
     },
     {
         "id": 1004,
-        "subject": "Tennis Racket",
-        "location": "HEAD",
+        "subject": "Tennis Lessons",
+        "location": "Ajman",
         "price": 350,
         "image": "images/tennis.jpg",
         "space": "3",
@@ -45,8 +45,8 @@ let products = [
     },
     {
         "id": 1005,
-        "subject": "Badminton racket",
-        "location": "Yonex",
+        "subject": "Badminton lessons",
+        "location": "Umm Al Quwain",
         "price": 100,
         "image": "images/badminton.jpg",
         "space": "4",
@@ -55,8 +55,8 @@ let products = [
     },
     {
         "id": 1006,
-        "subject": "Basketball",
-        "location": "Spalding",
+        "subject": "Basketball lessons",
+        "location": "Ras Al Khaimah",
         "price": 350,
         "image": "images/basketball.jpg",
         "space": "4",
@@ -65,8 +65,8 @@ let products = [
     },
     {
         "id": 1007,
-        "subject": "American football",
-        "location": "Wilson",
+        "subject": "American football lessons",
+        "location": "Fujairah",
         "price": 350,
         "image": "images/american.jpg",
         "space": "4",
@@ -75,8 +75,8 @@ let products = [
     },
     {
         "id": 1008,
-        "subject": "Football cleats",
-        "location": "Nike",
+        "subject": "Ball control lessons",
+        "location": "Dubai",
         "price": 750,
         "image": "images/shoes.jpg",
         "space": "4",
@@ -85,8 +85,8 @@ let products = [
     },
     {
         "id": 1009,
-        "subject": "Goalpost",
-        "location": "Cozy Trix",
+        "subject": "Goalkeeping lessons",
+        "location": "Abu Dhabi",
         "price": 400,
         "image": "images/goalpost.jpg",
         "space": "4",
@@ -95,10 +95,10 @@ let products = [
     },
     {
         "id": 1010,
-        "subject": "Sports Cap",
-        "location": "Nike",
+        "subject": "Golf lessons",
+        "location": "Sharjah",
         "price": 90,
-        "image": "images/cap.jpg",
+        "image": "images/golf.jpg",
         "space": "4",
         "availableInventory": 4,
         "rating": 4
