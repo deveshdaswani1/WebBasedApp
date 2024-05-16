@@ -70,7 +70,7 @@
               </thead>
               <tbody>
                 <tr v-for="product,index in cartDetails">
-                  <td>{{product+1}}</td>
+                  <td>{{index+1}}</td>
                   <td>
                     <p class="mb-0">{{product.subject}}</p>
                     <p class="mb-0 small text-muted">{{product.location}}</p>
@@ -82,7 +82,7 @@
                   <td class="text-center">
                     <button @click="removeFromCart(product)" class="btn btn-sm btn-outline-danger rounded-4"
                       data-mdb-ripple-init data-mdb-ripple-color="dark">
-                      <i class="fa-solid fa-trash-can"></i>
+                      Remove
                     </button>
                   </td>
                 </tr>
