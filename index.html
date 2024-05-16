@@ -58,6 +58,37 @@
                 </div>
             </div>
             <div v-else>
+                <h1>Cart</h1>
+                <table class="table align-middle table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Product</th>
+                  <th class="text-end">Price</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="product,index in cartDetails">
+                  <td>{{product+1}}</td>
+                  <td>
+                    <p class="mb-0">{{product.subject}}</p>
+                    <p class="mb-0 small text-muted">{{product.location}}</p>
+                  </td>
+                  <td class="text-end">
+                    <p class="mb-0 small text-muted">{{product.quantity}}x{{product.price}}</p>
+                    <p class="mb-0">AED {{product.total}}</p>
+                  </td>
+                  <td class="text-center">
+                    <button @click="removeFromCart(product)" class="btn btn-sm btn-outline-danger rounded-4"
+                      data-mdb-ripple-init data-mdb-ripple-color="dark">
+                      <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+                
                 <h1 style="font-family: Arial, sans-serif;">Checkout</h1>
                 <p>
                     <strong>First Name:</strong>
@@ -112,6 +143,7 @@
         </main>
     </div>
     <script type="text/javascript">
+        // Initializing Vue
         var webstore = new Vue({
             el: '#app',
             data: {
@@ -145,12 +177,21 @@
                 },
             },
             methods: {
+                // Function to add products to cart
                 addToCart: function (product) {
                     if (product.availableInventory > 0) {
                         this.cart.push(product.id);
                     }
                 },
-                
+
+                removeFromCart(product) {
+      const index = this.cart.lastIndexOf(product.id);
+      if (index > -1) {
+        this.cart.splice(index, 1);
+      }
+    },
+
+                // Function to sort products
                 sortProducts: function () {
                     switch (this.sortCriteria) {
                         case 'location':
@@ -182,6 +223,8 @@
                         return a.price - b.price;
                     });
                 },
+                // End of Function to sort products
+                
                 performSearch: function () {
                     if (this.searchQuery.trim() === '') {
                         this.products = this.originalProducts.slice();
@@ -218,12 +261,27 @@
                 },
             },
             computed: {
+
+                
                 cartItemCount: function () {
                     return this.cart.length || '';
                 },
                 checkoutButtonText: function () {
                     return this.showProduct ? `${this.cartItemCount} Checkout` : 'Back to Products';
                 },
+
+                cartDetails() {
+      const uniqueProductIds = Array.from(new Set(this.cart));
+      return uniqueProductIds.map((productId) => {
+        const lesson = this.products.find((product) => product.id === productId);
+        const quantity = this.cart.filter((id) => id === productId).length;
+        return {
+          ...product,
+          quantity,
+          total: quantity * lesson.price,
+        };
+      });
+    },
 
                 isFormValid() {
                     return /^[a-zA-Z]+$/.test(this.order.firstName) && /^[a-zA-Z]+$/.test(this.order.lastName) && /^[0-9]+$/.test(this.order.phoneNumber)
