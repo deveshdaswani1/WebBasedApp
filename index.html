@@ -273,7 +273,7 @@
                 cartDetails() {
       const uniqueProductIds = Array.from(new Set(this.cart));
       return uniqueProductIds.map((productId) => {
-        const lesson = this.products.find((product) => product.id === productId);
+        const product = this.products.find((product) => product.id === productId);
         const quantity = this.cart.filter((id) => id === productId).length;
         return {
           ...product,
