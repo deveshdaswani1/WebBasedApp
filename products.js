@@ -2,7 +2,7 @@ let products = [
     {
         "id": 1001,
         "subject": "Soccer ball",
-        "Brand": "adidas",
+        "location": "adidas",
         "size": "5",
         "price": 120,
         "image": "images/soccer.jpg",
@@ -15,7 +15,7 @@ let products = [
     {
         "id": 1002,
         "subject": "Boxing gloves",
-        "Brand": "Venum",
+        "location": "Venum",
         "price": 140,
         "image": "images/boxing.jpg",
         "space": "4",
@@ -26,7 +26,7 @@ let products = [
     {
         "id": 1003,
         "subject": "Cricket bat",
-        "Brand": "Nike",
+        "location": "Nike",
         "price": 160,
         "image": "images/cricket.jpg",
         "space": "5",
@@ -36,7 +36,7 @@ let products = [
     {
         "id": 1004,
         "subject": "Tennis Racket",
-        "Brand": "HEAD",
+        "location": "HEAD",
         "price": 350,
         "image": "images/tennis.jpg",
         "space": "3",
@@ -46,7 +46,7 @@ let products = [
     {
         "id": 1005,
         "subject": "Badminton racket",
-        "Brand": "Yonex",
+        "location": "Yonex",
         "price": 100,
         "image": "images/badminton.jpg",
         "space": "4",
@@ -56,7 +56,7 @@ let products = [
     {
         "id": 1006,
         "subject": "Basketball",
-        "Brand": "Spalding",
+        "location": "Spalding",
         "price": 350,
         "image": "images/basketball.jpg",
         "space": "4",
@@ -66,7 +66,7 @@ let products = [
     {
         "id": 1007,
         "subject": "American football",
-        "Brand": "Wilson",
+        "location": "Wilson",
         "price": 350,
         "image": "images/american.jpg",
         "space": "4",
@@ -76,7 +76,7 @@ let products = [
     {
         "id": 1008,
         "subject": "Football cleats",
-        "Brand": "Nike",
+        "location": "Nike",
         "price": 750,
         "image": "images/shoes.jpg",
         "space": "4",
@@ -86,7 +86,7 @@ let products = [
     {
         "id": 1009,
         "subject": "Goalpost",
-        "Brand": "Cozy Trix",
+        "location": "Cozy Trix",
         "price": 400,
         "image": "images/goalpost.jpg",
         "space": "4",
@@ -96,7 +96,7 @@ let products = [
     {
         "id": 1010,
         "subject": "Sports Cap",
-        "Brand": "Nike",
+        "location": "Nike",
         "price": 90,
         "image": "images/cap.jpg",
         "space": "4",
