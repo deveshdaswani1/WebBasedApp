@@ -21,7 +21,7 @@
             <label for="sort">Sort by:</label>
             <select id="sort" v-model="sortCriteria" @change="sortProducts">
                 <option value="default">Default</option>
-                <option value="Brand">Brand</option>
+                <option value="location">location</option>
                 <option value="title">Title</option>
                 <option value="price">Price</option>
             </select>
@@ -40,7 +40,7 @@
                             <img v-bind:src="product.image">
                         </figure>
                         <h2 v-text="product.subject"></h2>
-                        <p><strong>Brand:</strong> {{ product.Brand }}</p>
+                        <p><strong>location:</strong> {{ product.location }}</p>
                         <p>Price: {{ product.price }}</p>
                         <p>Available stock: {{ product.availableInventory }}</p>
                         <div>
@@ -153,8 +153,8 @@
                 
                 sortProducts: function () {
                     switch (this.sortCriteria) {
-                        case 'Brand':
-                            this.sortByBrand();
+                        case 'location':
+                            this.sortBylocation();
                             break;
                         case 'title':
                             this.sortByTitle();
@@ -167,9 +167,9 @@
                             break;
                     }
                 },
-                sortByBrand: function () {
+                sortBylocation: function () {
                     this.products.sort((a, b) => {
-                        return a.Brand.localeCompare(b.Brand);
+                        return a.location.localeCompare(b.location);
                     });
                 },
                 sortByTitle: function () {
@@ -190,7 +190,7 @@
                         this.products = this.originalProducts.filter(product => {
                             return (
                                 product.subject.toLowerCase().includes(query) ||
-                                product.Brand.toLowerCase().includes(query) ||
+                                product.location.toLowerCase().includes(query) ||
                                 product.price.toString().includes(query)
                             );
                         });
