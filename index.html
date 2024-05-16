@@ -118,7 +118,6 @@
                 sitename: "Radiant sports equipment",
                 showProduct: true,
                 products: products,
-                isFormValid: false,
 
                 cart: [],
                 sortCriteria: 'default',
@@ -205,7 +204,6 @@
                     this.showProduct = !this.showProduct;
                 },
                 submitform: function () {
-                    this.updateFormValidity(); // Call the method to update form validity
                     if (this.isFormValid) {
                         alert('Order submitted!');
                     } else {
