@@ -226,7 +226,7 @@
                 },
 
                 isFormValid() {
-                    return /^[a-zA-Z]+$/.test(this.firstName) && /^[a-zA-Z]+$/.test(this.lastName) && /^[0-9]+$/.test(this.phoneNumber)
+                    return /^[a-zA-Z]+$/.test(this.order.firstName) && /^[a-zA-Z]+$/.test(this.order.lastName) && /^[0-9]+$/.test(this.order.phoneNumber)
                 }
             },
             mounted: function () {
