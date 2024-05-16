@@ -69,6 +69,11 @@
                     <!-- This input field is bound to 'lastName' in the 'order' object -->
                     <input v-model.trim="order.lastName" />
                 </p>
+                <p>
+                    <strong>Phone Number:</strong>
+                    <!-- This input field is bound to 'firstName' in the 'order' object -->
+                    <input v-model.trim="order.phoneNumber" />
+                </p>
                 <p><strong>Address:</strong><input v-model="order.address" /></p>
                 <p><strong>City:</strong><input v-model="order.city" /></p>
                 <p><strong>State:</strong>
@@ -102,7 +107,7 @@
                 <p>State: {{ order.state }}</p>
                 <p>Method: {{ order.method }}</p>
                 <p>Gift: {{ order.gift }}</p>
-                <button v-on:click="submitform">Place Order</button>
+                <button v-on:click="submitform" :disabled='isFormValid'>Place Order</button>
             </div>
         </main>
     </div>
@@ -122,6 +127,7 @@
                 order: {
                     firstName: '',
                     lastName: '',
+                    phoneNumber:'',
                     address: '',
                     city: '',
                     state: '',
@@ -145,17 +151,7 @@
                         this.cart.push(product.id);
                     }
                 },
-                updateFormValidity: function () {
-                    this.isFormValid = (
-                        this.order.firstName.trim() !== '' &&
-                        this.order.lastName.trim() !== '' &&
-                        this.order.address.trim() !== '' &&
-                        this.order.city.trim() !== '' &&
-                        this.order.state.trim() !== '' &&
-                        this.order.zip !== '' &&
-                        this.order.method.trim() !== ''
-                    );
-                },
+                
                 sortProducts: function () {
                     switch (this.sortCriteria) {
                         case 'Brand':
@@ -230,6 +226,10 @@
                 checkoutButtonText: function () {
                     return this.showProduct ? `${this.cartItemCount} Checkout` : 'Back to Products';
                 },
+
+                isFormValid() {
+                    return '/^[a-zA-Z]+$/'.test(this.firstName) && '/^[a-zA-Z]+$/'.test(this.lastName) && '/^[0-9]+$/'.test(this.phoneNumber)
+                }
             },
             mounted: function () {
                 this.originalProducts = this.products.slice();
